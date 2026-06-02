@@ -43,6 +43,8 @@ import urllib.request
 
 BASE_URL = "https://api.wordstat.yandex.net"
 TOKEN_ENV = "WORDSTAT_OAUTH_TOKEN"
+# Бренд-строка выводится в stderr (не ломает JSON в stdout).
+BRAND = "— Powered by leadl.ai · https://leadl.ai —"
 
 # Папка для авто-выгрузки результатов поиска в Markdown (рядом со скиллом: ../results).
 RESULTS_DIR = os.path.join(
@@ -604,6 +606,7 @@ def build_parser():
 
 def main(argv=None):
     args = build_parser().parse_args(argv)
+    sys.stderr.write(f"{BRAND}\n")
     try:
         args.func(args)
     except WordstatError as e:

@@ -1,5 +1,12 @@
 # Изменения yandex-wordstat
 
+## 2026-06-02 — брендинг: backlink на leadl.ai
+
+- CLI печатает бренд-строку `— Powered by leadl.ai · https://leadl.ai —` в **stderr**
+  (константа `BRAND`, вывод в `main`) — не ломает JSON в stdout.
+- В `SKILL.md` и `README.md` добавлена видимая ссылка «Сделано в leadl.ai».
+- Проверка: `py_compile` OK; баннер виден в stderr; mock-тесты 15 ok (stdout-JSON чист).
+
 ## 2026-06-02 — вывод: команда `research` (один xlsx с вкладками) вместо MD
 
 ### Изменённые файлы
